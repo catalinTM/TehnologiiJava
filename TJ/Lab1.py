@@ -11,7 +11,7 @@ PARAMS = {'letters': "ceva" }
 async_requests = []
 time = []
 
-rs = [grequests.get(url = URL, params = PARAMS) for i in range(10)]
+rs = [grequests.get(url = URL, params = PARAMS) for i in range(100)]
 
 for request in grequests.map(rs):
     print(request.elapsed)
