@@ -108,7 +108,7 @@ public class DecorateResponseFilter implements Filter {
             FilterChain chain)
             throws IOException, ServletException {
         
-        /*
+        
         Document doc = Jsoup.connect(request.getLocalAddr()).get();
 
         Element div = doc.select("li").first();
@@ -117,7 +117,7 @@ public class DecorateResponseFilter implements Filter {
 
         
         log(div.text());
-        */
+        
 
         
         //Send the decorated object as a replacement for the original response
