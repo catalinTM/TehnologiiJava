@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+--><root>
+    <languages>
+        <language>English</language>
+        <language>French</language>
+        <language>Romanian</language>
+    </languages>
+    <dictionary>
+        <entry>
+            <language>English</language>
+            <word>gunner</word>
+            <description>a member of the armed forces who operates or specializes in guns</description>
+        </entry>
+        <entry>
+            <language>Romana</language>
+            <word>castor</word>
+            <description>Mamifer rozator semiacvatic, lung de circa 85 cm; biber (Castor canadensis).</description>
+        </entry>
+<entry>
+<language>English</language>
+<word>test</word>
+<description>fff</description>
+</entry>
+<entry>
+<language>English</language>
+<word>2</word>
+<description>3</description>
+</entry>
+</dictionary>
+</root>
