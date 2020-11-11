@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="MeetingCreateDlg" widgetVar="MeetingCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateMeetingTitle}">
+            <h:form id="MeetingCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{meetingController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateMeetingLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{meetingController.selected.id}" title="#{bundle.CreateMeetingTitle_id}" required="true" requiredMessage="#{bundle.CreateMeetingRequiredMessage_id}"/>
+                        <p:outputLabel value="#{bundle.CreateMeetingLabel_topic}" for="topic" />
+                        <p:inputText id="topic" value="#{meetingController.selected.topic}" title="#{bundle.CreateMeetingTitle_topic}" required="true" requiredMessage="#{bundle.CreateMeetingRequiredMessage_topic}"/>
+                        <p:outputLabel value="#{bundle.CreateMeetingLabel_startingtime}" for="startingtime" />
+                        <p:calendar id="startingtime" pattern="HH:mm:ss" value="#{meetingController.selected.startingtime}" title="#{bundle.EditMeetingTitle_startingtime}" required="true" requiredMessage="#{bundle.EditMeetingRequiredMessage_startingtime}" showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateMeetingLabel_duration}" for="duration" />
+                        <p:inputText id="duration" value="#{meetingController.selected.duration}" title="#{bundle.CreateMeetingTitle_duration}" required="true" requiredMessage="#{bundle.CreateMeetingRequiredMessage_duration}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{meetingController.create}" value="#{bundle.Save}" update="display,:MeetingListForm:datalist,:growl" oncomplete="handleSubmit(args,'MeetingCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="MeetingCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

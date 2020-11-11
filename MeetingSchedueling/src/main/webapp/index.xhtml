@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        Meeting Scheduling
+
+        <br />
+        <h:link outcome="/person/List" value="Show All Person Items"/>
+        <br />
+        <h:link outcome="/meeting/List" value="Show All Meeting Items"/>
+    </h:body>
+
+    <f:view>
+
+
+
+        <h:form>
+            <h1><h:outputText value="Example from memory-based list"/></h1>
+            <p:dataTable value="#{personFacade.persons}" var="item">
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id"/>
+                    </f:facet>
+                    <h:outputText value="#{item.id}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Name"/>
+                    </f:facet>
+                    <h:outputText value="#{item.name}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+
+
+        <h:form>
+            <h1><h:outputText value="Create/Edit"/></h1>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Id:" for="id" />
+                <p:inputText id="id" value="#{id}" title="Id" required="true" requiredMessage="The Id field is required."/>
+                <p:outputLabel value="Name:" for="name" />
+                <p:inputText id="name" value="#{name}" title="Name" required="true" requiredMessage="The Name field is required."/>
+            </p:panelGrid>
+            <p:column headerText="Action" >
+                <p:commandButton value="Add New" action="#{personFacade.addPerson(id, name)}"  />
+            </p:column>
+        </h:form>
+
+
+    </f:view>
+
+
+</html>
+
